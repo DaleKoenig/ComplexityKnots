@@ -350,28 +350,37 @@ Here and further, if $L$ is a link and $K$ is a component of $L$, denote by $L \
 \begin{lemma}
 \label{lem_unlinking}
 Suppose $L$ is a link, and $K$ is a component of $L$.
-Let $C=c_1, c_2.
-..., c_n$ be a set of $n$ unlinking moves of $L$, at least one of which involves the component $K$.
+Let $C=c_1, c_2, ..., c_n$ be a set of $n$ unlinking moves of $L$, at least one of which involves the component $K$.
 Let $c$ be an unlinking move of $L$ that results in $K$ becoming an unknot split from the other components of $L$.
-Let $C'$ be the set of at most $n$ unlinking moves obtained by taking the collection $c, c_1, c_2, ..., c_n$, and removing each $c_i$ that involves $K$.
-Then:
+Then we can replace $C$ with another sequence $C'$ of unlinking moves beginning with $c$ such that
 \vspace{0.1in}
 
-(a) If $C$ results in $L$ being an unlink, so does $C'$.
+(a) $C'$ has length equal or less than that of $C$
+
+(b) If $C$ results in $L$ being an unlink, so does $C'$.
 \vspace{0.1in}
 
-(b) If $P$ is some component of $L \backslash K$ and $C$ results in $P$ being split from $L \backslash P$, so does $C'$.
+(c) If $P$ is some component of $L \backslash K$ and $C$ results in $P$ being split from $L \backslash P$, so does $C'$.
 \end{lemma}
 
 \begin{proof}
 Since the first unlinking move of $C'$ is $c$, the component $K$ is unknotted and unlinked from $L\backslash K$ after $c$ is applied.
-In $C'$ we have removed any other moves involving $K$, so we can assume $K$ is unknotted and unlinked at the end, and restrict our attention to $L \backslash K$.
+Let $D$ be the disk bounded by $K$ after $c$ is applied.
+We now construct $C'$ iteratively be modifying moves from $C$.
+For each move of $C$, if the move involves the component $K$, we skip the move.
+Since at least one move of $C$ is assumed to involve $K$, this ensures that condition (a) is upheld.
+If a move $c_i$ does not involve $K$, and the path determining $c_i$ does not pass through the disk $D$, we add $c_i$ to $C'$ unmodified.
+If the path does pass through $D$, we isotope the path relative its boundary in the complement of $L/K$ to make it disjoint from $D$.
+Since we isotope in the complement of $L/K$, the path must cross through $K$ to make it disjoint from $D$.
+We add the modified unlinking move to $C'$, and repeat for each unlinking move $c_i$ of $C$
 
-The isotopy type of the link $L \backslash K$ is not affected by any moves involving $K$.
-In case (a), $C$ changes $L \backslash K$ into an unlink.
-Therefore, restricting to the subset of $c_1, c_2, ..., c_n$ not involving $K$ must also change $L \backslash K$ into an unlink, and $c$ ensures that $K$ is unlinked as well.
-In case (b), $C$ results in $P$ being split from $L \backslash P$.
-Restricting to the set of $c_1, c_2, ..., c_n$ not involving $K$ must also split $P$ from $L \backslash (K \cup P)$, and $c$ ensures that $K$ is split from $P$ as well.
+Let $C' = c, c_1', ..., c_m'$, where for notational convenience we do not assume that $c_i'$ is the result of modifying $c_i$ (for example, if $c_1$ involved $K$ then we would have skipped it, so $c_1'$ would be a result of modifying $c_2$).
+Since the paths determining the $c_i'$ were constructed to be disjoint from $D$, the disk $D$ is disjoint from $L \ K$ after performing $C'$.
+Therefore, after performing all unlinking moves of $C'$, $K$ must be an unlinked unknot.
+To evaluate conditions (b) and (c), we therefore only need to analyze how the moves of $C'$ affect $L \ K$.
+However, we only changed the moves affecting how $K$ lies with respect to $L \ K$, so conditions (b) and (c) are unchanged.
+To put this another way, if we had started with only the link $L\K$, and restricted both $C$ and $C'$ to the subset of moves that do not involve $K$, then $C$ and $C'$ would be the same set of moves.
+Our modifications have only ensured that $K$ is an unlinked unknot at the end.
 \end{proof}
 
 We can now prove Theorem \ref{thm_unlinking}.
