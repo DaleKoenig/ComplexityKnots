@@ -1,0 +1,72 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{AgolHassThurston1}
+Ian Agol, Joel Hass, and William Thurston, \emph{The computational complexity
+  of knot genus and spanning area}, Trans. Amer. Math. Soc. \textbf{358}
+  (2006), no.~9, 3821--3850.
+
+\bibitem{CowardLackenby1}
+Alexander Coward and Mark Lackenby, \emph{An upper bound on {R}eidemeister
+  moves}, American Journal of Mathematics \textbf{136} (2014), no.~4,
+  1023--1066.
+
+\bibitem{GareyJohnson1}
+Michael~R. Garey and David~S. Johnson, \emph{{Computers and Intractability: A
+  guide to the Theory of NP-Completeness}}, W.H. Freeman, 1979.
+
+\bibitem{GareyJohnsonTarjan1}
+Michael~R. Garey, David~S. Johnson, and Robert Endre~Tarjan, \emph{The planar
+  {H}amiltonian circuit problem is {NP}-complete}, {SIAM} J Comput. \textbf{5}
+  (1976), no.~4, 704--714.
+
+\bibitem{HassLagarias1}
+Joel Hass and Jeffrey Lagarias, \emph{The number of {R}eidemeister moves needed
+  for unknotting}, J. Amer. Math. Soc. \textbf{14} (2001), no.~2, 399--428.
+
+\bibitem{HassLagariasPippenger1}
+Joel Hass, Jeffrey Lagarias, and Nicholas Pippenger, \emph{The computational
+  complexity of knot and link problems}, {JACM} \textbf{46} (1999), no.~2,
+  185--211.
+
+\bibitem{Hayashi1}
+Hayashi, \emph{The number of {R}eidemeister moves for splitting a link}, Math.
+  Ann \textbf{332} (2005), no.~2, 239--252.
+
+\bibitem{Lackenby3}
+Mark Lackenby, \emph{Elementary knot theory}, arXiv:1604.03778.
+
+\bibitem{Lackenby4}
+\bysame, \emph{A polynomial upper bound on {R}eidemeister moves for each link
+  type}, In preparation.
+
+\bibitem{Lackenby2}
+\bysame, \emph{A polynomial upper bound on {R}eidemeister moves}, Ann. of Math.
+  \textbf{182} (2015), no.~2, 491--564.
+
+\bibitem{Lackenby1}
+\bysame, \emph{Some conditionally hard problems on links and 3-manifolds},
+  Discrete Comput. Geom. \textbf{58} (2017), no.~3, 580--595, arXiv:1602.08427.
+
+\bibitem{Lackenby5}
+\bysame, \emph{Links with splitting number one}, arXiv:1808.05495, 2018.
+
+\bibitem{Menasco1}
+William Menasco, \emph{Closed incompressible surfaces in alternating knot and
+  link complements}, Topology \textbf{23} (1984), no.~1, 37--44.
+
+\bibitem{Reidemeister1}
+Kurt Reidemeister, \emph{Knotten und gruppen.}, Abh. Math. Sem. Univ. Hamburg
+  \textbf{5} (1927), 7--23.
+
+\bibitem{Rolfsen1}
+Dale Rolfsen, \emph{Knots and links}, ch.~3F, p.~67, American Mathematical
+  Society, 1976.
+
+\end{thebibliography}
