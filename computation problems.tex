@@ -60,6 +60,9 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 
+\newcommand{\n}[1]{{\color{blue}{#1}}}
+
+\newcommand{\rn}[1]{{\color{red}{#1}}}
 
 \begin{document}
 
@@ -277,7 +280,7 @@ The two definitions of unlinking number are equivalent:  any crossing change is 
 For the other direction, given a collection of unlinking moves, first perform an isotopy of $L$ to make all of the unlinking move arcs perpendicular to a plane $\Pi$.
 This can be done by first choosing a thin regular neighborhood of each arc, performing an isotopy that shrinks the arcs until they lie in small disjoint Euclidean balls, followed by an ambient isotopy that is the identity outside the set of balls to straighten and rotate the arcs.
 These isotopies will also move the link $L$.
-Once all arcs are all straight and perpendicular to $\Pi$, project $L$ to $\Pi$.
+Once all arcs are straight and perpendicular to $\Pi$, project $L$ to $\Pi$.
 After applying a small perturbation of $L$ away from the arcs if necessary, the result of this projection will be a link diagram by general position arguments.
 Each unlinking move will be realized as a crossing change in the diagram.
 Thus, given a diagram of $L$ and a set of $n$ crossing changes turning $L$ into the unlink, there is a set of $n$ unlinking moves making $L$ into an unlink.
@@ -334,8 +337,9 @@ We continue to refer to the Whitehead doubled variable components as variable co
 \end{figure}
 
 In the resulting link, any variable component can be made into an unknot unlinked from the remainder of the diagram using a single crossing change.
-We call this crossing change an \emph{unclasping move}.
-Using $n$ crossing changes followed by Reidemeister moves we can replace $n$ variable components from the connected diagram with an $n$-component unlink, disjoint from the rest of the diagram.
+In fact, there are two such distinct crossing changes, but they determine only one unlinking move. This is the same unlinking move that is determined by any crossing change in a standard diagram of a Whitehead link.
+We call this unlinking move an \emph{unclasping move}.
+Using $n$ unlinking moves followed by Reidemeister moves we can replace $n$ variable components from the connected diagram with an $n$-component unlink, disjoint from the rest of the diagram.
 Moreover, if there exists a set of $n$ unlinking moves resulting in the unlink, then Lemma \ref{lem_unlinking}(a) asserts that there exists another set of $n$ unlinking moves, also resulting in the unlink, such that any move involving a variable component is an unclasping move for that component.
 The second part of the lemma (Lemma \ref{lem_unlinking}(b)) will be used in Section \ref{sec_splittingnum}.
 
@@ -355,7 +359,7 @@ Let $c$ be an unlinking move of $L$ that results in $K$ becoming an unknot split
 Then we can replace $C$ with another sequence $C'$ of unlinking moves beginning with $c$ such that
 \vspace{0.1in}
 
-(a) $C'$ has length equal or less than that of $C$
+(a) $C'$ has length equal or less than that of $C$.
 
 (b) If $C$ results in $L$ being an unlink, so does $C'$.
 \vspace{0.1in}
@@ -366,42 +370,51 @@ Then we can replace $C$ with another sequence $C'$ of unlinking moves beginning 
 \begin{proof}
 Since the first unlinking move of $C'$ is $c$, the component $K$ is unknotted and unlinked from $L\backslash K$ after $c$ is applied.
 Let $D$ be the disk bounded by $K$ after $c$ is applied.
-We now construct $C'$ iteratively be modifying moves from $C$.
-For each move of $C$, if the move involves the component $K$, we skip the move.
+We now construct $C'$ iteratively by modifying moves from $C$.
+
+For each move of $C$, if the move involves the component $K$, we do not include the move in $C'$.
+We will obtain the remaining moves of $C'$ by modifying the moves of $K$ that do not involve $K$.
 Since at least one move of $C$ is assumed to involve $K$, this ensures that condition (a) is upheld.
-If a move $c_i$ does not involve $K$, and the path determining $c_i$ does not pass through the disk $D$, we add $c_i$ to $C'$ unmodified.
+If a move $c_i$ does not involve $K$, and the path determining $c_i$ does not intersect the disk $D$, we add $c_i$ to $C'$ unmodified.
 If the path does pass through $D$, we isotope the path relative its boundary in the complement of $L/K$ to make it disjoint from $D$.
-Since we isotope in the complement of $L/K$, the path must cross through $K$ to make it disjoint from $D$.
+This is always possible, since $K$ is unlinked from $L\backslash K$.
+Note that since we isotope in the complement of $L\backslash K$, the path must intersect $K$ at some point in time during the isotopy.
 We add the modified unlinking move to $C'$, and repeat for each unlinking move $c_i$ of $C$
 
 Let $C' = c, c_1', ..., c_m'$, where for notational convenience we do not assume that $c_i'$ is the result of modifying $c_i$ (for example, if $c_1$ involved $K$ then we would have skipped it, so $c_1'$ would be a result of modifying $c_2$).
-Since the paths determining the $c_i'$ were constructed to be disjoint from $D$, the disk $D$ is disjoint from $L \ K$ after performing $C'$.
+Since the paths determining the modified moves were constructed to be disjoint from $D$, the disk $D$ is disjoint from $L\backslash K$ after performing $C'$.
 Therefore, after performing all unlinking moves of $C'$, $K$ must be an unlinked unknot.
-To evaluate conditions (b) and (c), we therefore only need to analyze how the moves of $C'$ affect $L \ K$.
-However, we only changed the moves affecting how $K$ lies with respect to $L \ K$, so conditions (b) and (c) are unchanged.
-To put this another way, if we had started with only the link $L \ K$, and restricted both $C$ and $C'$ to the subset of moves that do not involve $K$, then $C$ and $C'$ would be the same set of moves.
-Our modifications have only ensured that $K$ is an unlinked unknot at the end.
+To evaluate conditions (b) and (c), we therefore only need to analyze how the moves of $C'$ affect $L \backslash K$.
+If we restrict both $C$ and $C'$ to the subset of moves that do not involve $K$, then the sets of restricted moves act similarly on $L\backslash K$, since the paths determining the moves only differ by an ambient isotopy of $L \backslash K$. So (b) and (c) hold.
+% TODO: We need to add a figure to lemma's proof: take the referee's example and show an unlinking move avoiding the disk.
 \end{proof}
-
-This lemma can be applied repeatedly to different components under certain conditions.
-Suppose there are components $K_1, ..., K_m$ such that each has a corresponding unlinking move $c_{K_i}$ such that performing $c_{K_i}$ results in $K_i$ being an unknot unlinked from the rest of $L$.
-Then after performing $c_{K_i}$, the component $K_i$ will bound a disk $D_{K_i}$.
-We further impose the condition that $D_{K_i}$ can be isotoped to be disjoint from the path determining $c_{K_j}$ for $i \not = j$.
-Then given a sequence $C$ of unlinking moves, at least one of which involves $K_m$, we can apply the lemma to get a new sequence of equal or lesser length beginning with $c_{K_m}$.
-If in this new sequence, one of the unlinking moves involves $K_{m-1}$, we can apply the lemma again to get a sequence beginning with $c_{K_{m-1}}$.
-This can be repeated until either we end with a sequence beginning with $c_{K_1}, ..., c_{K_m}$, or get a sequence in which none of the moves involve some $K_i$ and therefore no longer satisfy the conditions of the lemma.
-If no two $c_{K_i}$ involve the same component, then we will not be forced to end early, and will therefore get a sequence no longer than the original beginning with $c_{K_1}, ..., c_{K_m}$.
 
 We can now prove Theorem \ref{thm_unlinking}.
 
 \begin{proof}[Proof of Theorem \ref{thm_unlinking}]
 For a given 3--\textsc{SAT} problem $F$ with $n$ variables and $m$ clauses, take the associated link $L^F$ constructed for \textsc{unlink as a sublink}, and modify it by replacing every component with an untwisted Whitehead double.
 Denote this link by $L_{*}^F$.
+In this diagram, unclasping moves for each Whitehead doubled component are visible as crossing changes in the diagram, and each such component bounds an obvious disk in the diagram after performing such an unclasping move.
 
 Take a sequence $C$ of $n$ unlinking moves of $L_{*}^F$ resulting in an unlink.
 A Whitehead doubled Hopf link cannot be unlinked without an unlinking move that only involves the components of that Whitehead doubled Hopf link.
-Since there are $n$ distinct Whitehead doubled Hopf sublinks of $L_{*}^F$ and $C$ consists of $n$ unlinking moves, $C$ must consist of one move involving each Whitehead doubled Hopf sublink.
-Then applying Lemma \ref{lem_unlinking}, there is another set of unlinking moves $C_*$ such that the $i$th move of $C_*$ is an unclasping move for either the $x_i$ or $\neg x_i$ component of $L_*^F$.
+Denote the Whitehead doubled Hopf sublinks by $W_1, W_2, ..., W_n$.
+Since there are $n$ distinct Whitehead doubled Hopf sublinks of $L_{*}^F$ and $C$ consists of $n$ unlinking moves, $C$ must consist of one move involving each of $W_i$.
+We claim that by repeatedly applying Lemma \ref{lem_unlinking} to $L_{*}^F$ and one of the components of each $W_i$, we obtain another set of unlinking moves $C_*$ such that the $i$th move of $C_*$ is an unclasping move for either the $x_i$ or $\neg x_i$ component of $L_*^F$.
+
+Indeed, first find an unlinking move of $C$ involving one of the components $K_1$ of $W_1$.
+Applying Lemma \ref{lem_unlinking} to $L$ and $K_1$ gives a sequence of unlinking moves $C'$ of equal or lesser length than $C$.
+The first unlinking move $c_1'$ of $C'$ is an unclasping move for $K_1$.
+By Lemma \ref{lem_unlinking}(b), the new sequence of moves $C'$ must still result in $L$ being an unlink.
+Note that $C'$ must have a move involving one of the components $K_2$ of $W_2$, since $C$ had a move involving only $W_2$, and in the proof of Lemma \ref{lem_unlinking} we did not exclude such moves.
+So we can again apply Lemma \ref{lem_unlinking} to $L$ and the component $K_2$ of $W_2$.
+The move $c_1'$ is an unclasping move for $K_1$, and therefore involves only $K_1$.
+Recall that we are working with a particular link diagram of $L_*^F$, described in the beginning.
+After performing an unclasping move $c_2'$ for $K_2$, the component $K_2$ bounds a disk visible in the link diagram, and the path determining $c_1'$ does not intersect this disk.
+Why the path for $c_1'$ does not intersect the disks bounded by $K_2$, $K_3$, etc.?
+Therefore, the application of Lemma \ref{lem_unlinking} does not modify $c_1'$, and we obtain a sequence beginning with $c_2', c_1'$.
+Repeating this process, we can get a sequence of unlinking moves such that, up to reordering, its $i$th unlinking move is an unclasping move for either the $x_i$ or $\neg x_i$ component of $L_*^F$.
+
 Since deleting an unlinked unknot does not change whether a link is an unlink, every unlinking move of $C_*$ can be seen as deleting a component of $L_*^F$, as in the proof of NP--hardness for \textsc{unlink as a sublink} (Theorem \ref{thm_unlinksublink}).
 Hence from the proof of Theorem \ref{thm_unlinksublink}, a set of unlinking moves $C_*$ that results in $L_*^F$ becoming an unlink corresponds to a variable assignment satisfying the 3--\textsc{SAT} problem $F$.
 
